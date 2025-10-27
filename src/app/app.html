@@ -1,27 +1,32 @@
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="h4">#</th>
-          <th class="h4">Name</th>
-          <th class="h4">Channel</th>
-          <th class="h4">Seasons</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (s of series; track s.id) {
+<div class="container">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <table class="table table-hover table-striped align-middle shadow-sm rounded overflow-hidden">
+        <thead class="table-light">
           <tr>
-            <th scope="row">{{ s.id }}</th>
-            <td><strong>{{ s.name }}</strong></td>
-            <td>{{ s.channel }}</td>
-            <td>{{ s.seasons }}</td>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Channel</th>
+            <th scope="col">Seasons</th>
           </tr>
-        }
-      </tbody>
-    </table>
-    <div class="mt-3">
-      <strong>Seasons average:</strong> {{ promedioSeasons | number:'1.0-0' }}
+        </thead>
+        <tbody>
+          @for (s of series; track s.id) {
+            <tr>
+              <th scope="row">{{ s.id }}</th>
+              <td><strong>{{ s.name }}</strong></td>
+              <td>{{ s.channel }}</td>
+              <td>{{ s.seasons }}</td>
+            </tr>
+          }
+          <tr class="table-light">
+            <td colspan="4" class="ps-2 py-3">
+              <strong>Seasons average:</strong>
+              {{ promedioSeasons | number:'1.0-0' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

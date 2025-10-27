@@ -17,4 +17,6 @@ export class App {
     const total = this.series.reduce((sum, s) => sum + s.seasons, 0);
     this.promedioSeasons = total / this.series.length;
 }
+
+
 }
